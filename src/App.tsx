@@ -1,4 +1,4 @@
-import './App.sass'
+import './App.scss'
 import { colleges } from "./colleges"
 
 import { useState } from "react"
@@ -6,7 +6,7 @@ import type { CollegeInfo } from './types'
 
 import Select from '@mui/material/Select'
 import type { SelectChangeEvent } from '@mui/material/Select'
-import { InputLabel, MenuItem } from '@mui/material'
+import { InputLabel, MenuItem, FormControl } from '@mui/material'
 
 
 function App() {
@@ -24,12 +24,12 @@ function App() {
       <div>
         {college.name}
       </div>
-      <div>
+      <FormControl fullWidth>
         <InputLabel id="college-select-label">Select a College</InputLabel>
         <Select labelId="college-select-label" id="college-select" onChange={handleCollegeChange} value={college.code} label={college.name}>
-          {colleges.map((c) => <MenuItem value={c.code}>{c.name}</MenuItem>)}
+          {colleges.map((c: CollegeInfo) => <MenuItem value={c.code}>{c.name}</MenuItem>)}
         </Select>
-      </div>
+      </FormControl>
 
       <div>
         <img className="college-icon" src={college.icon} />
