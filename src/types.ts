@@ -1,14 +1,5 @@
 import { StateName, StateAbbreviation } from "./enums"
 
-type CollegeKey =
-  | "fpu"
-  | "pba"
-  | "ucf"
-  | "uf"
-  | "usf"
-  | "fsu"
-  | "bc";
-
 type CollegeStatus = "public" | "private"
 
 type COA = {
@@ -16,19 +7,18 @@ type COA = {
   housingFood: number,
   supplies?: number,
   personalTransportation?: number
-};
-
-export type CollegeList = Record<CollegeKey, CollegeInfo>
+}
 
 export type CollegeInfo = {
+  code: string,
   name: string,
-  city: string,
   status: CollegeStatus,
+  icon: string,
+  city: string,
   stateName: StateName,
   stateAbbr: StateAbbreviation,
   coordinates: [number, number],
   costOfAttendance: COA,
   scholarshipAmount: number
-
 }
 

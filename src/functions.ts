@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import type { Route } from "@types/osrm";
+import type { Route } from "osrm";
 import type { CollegeInfo } from "./types";
 
 const blankRoute: Route = {

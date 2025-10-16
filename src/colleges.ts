@@ -1,13 +1,15 @@
 import { StateName, StateAbbreviation } from "./enums"
-import type { CollegeList } from "./types";
+import type { CollegeInfo } from "./types"
 
-const colleges: CollegeList = {
-  "bc": {
+export const colleges: CollegeInfo[] = [
+  {
+    code: "bc",
     name: "Broward College",
+    status: "private",
+    icon: "https://upload.wikimedia.org/wikipedia/en/thumb/8/89/Seal-of-Broward-College.svg/250px-Seal-of-Broward-College.svg.png",
     city: "Coconut Creek",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
-    status: "private",
     coordinates: [26.2517, 80.1789],
     costOfAttendance: {
       tuition: 1415,
@@ -17,12 +19,14 @@ const colleges: CollegeList = {
     },
     scholarshipAmount: 1675,
   },
-  "fpu": {
+  {
+    code: "fpu",
     name: "Florida Polytechnic University",
+    status: "public",
+    icon: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Florida_Polytechnic_University_seal.png/250px-Florida_Polytechnic_University_seal.png",
     city: "Lakeland",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
-    status: "public",
     coordinates: [28.0421, 81.9535],
     costOfAttendance: {
       tuition: 4940,
@@ -32,12 +36,14 @@ const colleges: CollegeList = {
     },
     scholarshipAmount: 4940,
   },
-  "pba": {
+  {
+    code: "pba",
     name: "Palm Beach Atlantic University",
+    status: "private",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbrPGYRMhLVEspvs75Bd82pKa7EDZz_jsjBQ&s",
     city: "West Palm Beach",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
-    status: "private",
     coordinates: [26.7145, 80.0549],
     costOfAttendance: {
       tuition: 45409,
@@ -47,12 +53,14 @@ const colleges: CollegeList = {
     },
     scholarshipAmount: 18000,
   },
-  "ucf": {
+  {
+    code: "ucf",
     name: "University of Central Florida",
+    status: "public",
+    icon: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Seal_of_the_University_of_Central_Florida.svg/180px-Seal_of_the_University_of_Central_Florida.svg.png",
     city: "Orlando",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
-    status: "public",
     coordinates: [28.5384, 81.3789],
     costOfAttendance: {
       tuition: 5954,
@@ -60,12 +68,14 @@ const colleges: CollegeList = {
     },
     scholarshipAmount: 5954,
   },
-  "uf": {
+  {
+    code: "uf",
     name: "University of Florida",
+    status: "public",
+    icon: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/University_of_Florida_seal.svg/190px-University_of_Florida_seal.svg.png",
     city: "Gainesville",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
-    status: "public",
     coordinates: [29.6520, 82.3250],
     costOfAttendance: {
       tuition: 6436,
@@ -75,12 +85,14 @@ const colleges: CollegeList = {
     },
     scholarshipAmount: 6436,
   },
-  "usf": {
+  {
+    code: "usf",
     name: "University of South Florida",
+    status: "public",
+    icon: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/University_of_South_Florida_seal.svg/180px-University_of_South_Florida_seal.svg.png",
     city: "Tampa",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
-    status: "public",
     coordinates: [27.9517, 82.4588],
     costOfAttendance: {
       tuition: 6410,
@@ -90,12 +102,14 @@ const colleges: CollegeList = {
     },
     scholarshipAmount: 6410,
   },
-  "fsu": {
+  {
+    code: "fsu",
     name: "Florida State University",
+    status: "public",
+    icon: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Florida_State_University_seal.svg/180px-Florida_State_University_seal.svg.png",
     city: "Tallahassee",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
-    status: "public",
     coordinates: [30.4382, 84.2806],
     costOfAttendance: {
       tuition: 5654,
@@ -105,5 +119,5 @@ const colleges: CollegeList = {
     },
     scholarshipAmount: 5654,
   }
-}
+]
 
