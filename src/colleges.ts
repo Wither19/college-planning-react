@@ -1,6 +1,14 @@
 import { StateName, StateAbbreviation } from "./enums"
 import type { CollegeInfo } from "./types"
 
+/*
+Icon sizes:
+250
+225
+190
+180
+*/
+
 export const colleges: CollegeInfo[] = [
   {
     code: "bc",
