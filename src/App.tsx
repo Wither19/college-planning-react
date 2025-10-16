@@ -4,11 +4,12 @@ import { colleges } from "./colleges"
 import { useEffect, useRef, useState } from "react"
 import type { CollegeInfo } from './types'
 
-import { getRouteFromArray } from "./functions"
+import { accumulateCOA, getRouteFromArray } from "./functions"
 
 import Select from '@mui/material/Select'
 import type { SelectChangeEvent } from '@mui/material/Select'
-import { InputLabel, MenuItem, FormControl, Button } from '@mui/material'
+import { InputLabel, MenuItem, FormControl } from '@mui/material'
+import NumberFlow from "@number-flow/react"
 
 
 function App() {
@@ -40,12 +41,9 @@ function App() {
       </FormControl>
 
       <div>
-        <img className="college-icon" src={college.icon} />
+        <NumberFlow value={accumulateCOA(college)} format={{ style: 'currency', currency: 'USD' }}
+        />
       </div>
-
-      <Button onClick={() => {
-        alert(distance.current)
-      }}>Get current distance (m)</Button>
     </>
   )
 }
