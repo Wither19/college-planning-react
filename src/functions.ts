@@ -22,6 +22,6 @@ function getRoute(n: number, w: number): Route {
   return routeData;
 };
 
-const getRouteFromArray = (arr: [number, number]): Route => getRoute(arr[0], arr[1]);
+export const getRouteFromArray = (arr: [number, number]): Route => getRoute(arr[0], arr[1]);
 
-const accumulateCOA = (c: CollegeInfo): number => Object.values(c.costOfAttendance).reduce((total, current) => total + current) - c.scholarshipAmount;
+export const accumulateCOA = (c: CollegeInfo): number => Object.values(c.costOfAttendance).reduce((total, current) => total + current) - c.scholarshipAmount;

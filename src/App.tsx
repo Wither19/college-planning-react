@@ -1,16 +1,19 @@
 import './App.scss'
 import { colleges } from "./colleges"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import type { CollegeInfo } from './types'
+
+import { getRouteFromArray } from "./functions"
 
 import Select from '@mui/material/Select'
 import type { SelectChangeEvent } from '@mui/material/Select'
-import { InputLabel, MenuItem, FormControl } from '@mui/material'
+import { InputLabel, MenuItem, FormControl, Button } from '@mui/material'
 
 
 function App() {
   const [college, setCollege] = useState<CollegeInfo>(colleges[0])
+  const distance = useRef(0);
 
   const handleCollegeChange = (e: SelectChangeEvent) => {
     const selected = e.target.value
@@ -18,6 +21,11 @@ function App() {
 
     setCollege(rightCollege)
   };
+
+  useEffect(() => {
+    distance.current = getRouteFromArray(college.coordinates).distance
+  }, [college])
+
 
   return (
     <>
@@ -34,6 +42,10 @@ function App() {
       <div>
         <img className="college-icon" src={college.icon} />
       </div>
+
+      <Button onClick={() => {
+        alert(distance.current)
+      }}>Get current distance (m)</Button>
     </>
   )
 }
