@@ -12,11 +12,14 @@ const blankRoute: Route = {
   legs: []
 }
 
-function getRoute(n: number, w: number): Route {
+function getRoute(lon: number, lat: number): Route {
+  const OSRMURL = `http://router.project-osrm.org/route/v1/driving/26.2913,440.2411;${lon},${lat};`
   let routeData = blankRoute
 
-  axios.get(`http://router.project-osrm.org/route/v1/driving/26.2913,440.2411;${n},${w}`).then((r) => {
+
+  axios.get(OSRMURL).then((r) => {
     routeData = r.data
+    console.log("Position 50: ", OSRMURL[49])
   })
 
   console.log(routeData)
