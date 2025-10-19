@@ -1,5 +1,14 @@
+
 import { StateName, StateAbbreviation } from "./enums"
 import type { CollegeInfo } from "./types"
+
+import bcImg from "./assets/bc.png";
+import fpuImg from "./assets/fpu.png";
+import fsuImg from "./assets/fsu.png";
+import pbaImg from "./assets/pba.png";
+import ucfImg from "./assets/ucf.png";
+import ufImg from "./assets/uf.png";
+import usfImg from "./assets/usf.png";
 
 /*
 Icon sizes:
@@ -14,7 +23,7 @@ export const colleges: CollegeInfo[] = [
     code: "bc",
     name: "Broward College",
     status: "private",
-    icon: "./assets/bc.png",
+    icon: bcImg,
     city: "Coconut Creek",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
@@ -31,7 +40,7 @@ export const colleges: CollegeInfo[] = [
     code: "fpu",
     name: "Florida Polytechnic University",
     status: "public",
-    icon: "./assets/fpu.png",
+    icon: fpuImg,
     city: "Lakeland",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
@@ -48,7 +57,7 @@ export const colleges: CollegeInfo[] = [
     code: "pba",
     name: "Palm Beach Atlantic University",
     status: "private",
-    icon: "./assets/pba.png",
+    icon: pbaImg,
     city: "West Palm Beach",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
@@ -65,7 +74,7 @@ export const colleges: CollegeInfo[] = [
     code: "ucf",
     name: "University of Central Florida",
     status: "public",
-    icon: "./assets/ucf.png",
+    icon: ucfImg,
     city: "Orlando",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
@@ -80,7 +89,7 @@ export const colleges: CollegeInfo[] = [
     code: "uf",
     name: "University of Florida",
     status: "public",
-    icon: "./assets/uf.png",
+    icon: ufImg,
     city: "Gainesville",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
@@ -97,7 +106,7 @@ export const colleges: CollegeInfo[] = [
     code: "usf",
     name: "University of South Florida",
     status: "public",
-    icon: "./assets/usf.png",
+    icon: usfImg,
     city: "Tampa",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
@@ -114,7 +123,7 @@ export const colleges: CollegeInfo[] = [
     code: "fsu",
     name: "Florida State University",
     status: "public",
-    icon: "./assets/fsu.png",
+    icon: fsuImg,
     city: "Tallahassee",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
