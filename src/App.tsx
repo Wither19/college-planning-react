@@ -14,7 +14,7 @@ import NumberFlow from "@number-flow/react"
 
 function App() {
   const [college, setCollege] = useState<CollegeInfo>(colleges[0])
-  const distance = useRef(0);
+  const [distance, setDistance] = useState(getRouteFromArray(college.coordinates).distance)
 
   const handleCollegeChange = (e: SelectChangeEvent) => {
     const selected = e.target.value
@@ -24,7 +24,7 @@ function App() {
   };
 
   useEffect(() => {
-    distance.current = getRouteFromArray(college.coordinates).distance
+    setDistance(getRouteFromArray(college.coordinates).distance)
   }, [college])
 
 
@@ -43,6 +43,9 @@ function App() {
       <div>
         <NumberFlow value={accumulateCOA(college)} format={{ style: 'currency', currency: 'USD' }}
         />
+      </div>
+      <div>
+        {distance} Meters
       </div>
     </>
   )

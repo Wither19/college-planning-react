@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from "axios"
 
-import type { Route } from "osrm";
-import type { CollegeInfo } from "./types";
+import type { Route } from "osrm"
+import type { CollegeInfo } from "./types"
 
 const blankRoute: Route = {
   distance: 0,
@@ -10,18 +10,20 @@ const blankRoute: Route = {
   weight: 0,
   weight_name: "",
   legs: []
-};
+}
 
 function getRoute(n: number, w: number): Route {
-  let routeData = blankRoute;
+  let routeData = blankRoute
 
-  axios.get(`http://router.project-osrm.org/route/v1/driving/${n},${w}`).then((r) => {
-    routeData = r.data;
-  });
+  axios.get(`http://router.project-osrm.org/route/v1/driving/26.2913,440.2411;${n},${w}`).then((r) => {
+    routeData = r.data
+  })
 
-  return routeData;
-};
+  console.log(routeData)
 
-export const getRouteFromArray = (arr: [number, number]): Route => getRoute(arr[0], arr[1]);
+  return routeData
+}
 
-export const accumulateCOA = (c: CollegeInfo): number => Object.values(c.costOfAttendance).reduce((total, current) => total + current) - c.scholarshipAmount;
+export const getRouteFromArray = (arr: [number, number]): Route => getRoute(arr[0], arr[1])
+
+export const accumulateCOA = (c: CollegeInfo): number => Object.values(c.costOfAttendance).reduce((total, current) => total + current) - c.scholarshipAmount
