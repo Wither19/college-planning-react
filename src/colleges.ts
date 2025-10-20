@@ -68,7 +68,7 @@ export const colleges: CollegeInfo[] = [
       supplies: 1324,
       personalTransportation: 3663
     },
-    scholarshipAmount: 18000,
+    scholarshipAmount: 20330,
   },
   {
     code: "ucf",

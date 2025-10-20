@@ -1,52 +1,50 @@
+
 import './App.scss'
-import { colleges } from "./colleges"
-
-import { useEffect, useRef, useState } from "react"
+import { useState } from 'react'
+import { colleges } from './colleges'
+import CollegeInfoCard from "./components/CollegeInfoCard"
+// import { getRouteFromArray } from './functions'
+import Switch from '@mui/material/Switch'
+import FormControlLabel from '@mui/material/FormControlLabel'
 import type { CollegeInfo } from './types'
-
-import { accumulateCOA, getRouteFromArray } from "./functions"
-
-import Select from '@mui/material/Select'
-import type { SelectChangeEvent } from '@mui/material/Select'
-import { InputLabel, MenuItem, FormControl } from '@mui/material'
-import NumberFlow from "@number-flow/react"
 
 
 function App() {
-  const [college, setCollege] = useState<CollegeInfo>(colleges[0])
-  const [distance, setDistance] = useState(getRouteFromArray(college.coordinates).distance)
+  // const [college, setCollege] = useState<CollegeInfo>(colleges[0])
+  // const [distance, setDistance] = useState(getRouteFromArray(college.coordinates).distance)
+  const [isYearly, setCOAYearly] = useState(true)
 
-  const handleCollegeChange = (e: SelectChangeEvent) => {
-    const selected = e.target.value
-    const rightCollege = colleges.filter((c) => c.code === selected)[0]
+  // const handleCollegeChange = (e: SelectChangeEvent) => {
+  //   const selected = e.target.value
+  //   const rightCollege = colleges.filter((c) => c.code === selected)[0]
 
-    setCollege(rightCollege)
-  };
+  //   setCollege(rightCollege)
+  // };
 
-  useEffect(() => {
-    setDistance(getRouteFromArray(college.coordinates).distance)
-  }, [college])
+  const handleCOARate = () => {
+    setCOAYearly((r) => !r)
+  }
+
+  // useEffect(() => {
+  //   setDistance(getRouteFromArray(college.coordinates).distance)
+  // }, [college])
 
 
   return (
     <>
-      <div>
-        {college.name}
+      <div className="options-container">
+        <FormControlLabel onChange={handleCOARate} control={<Switch />} label={`Cost of Attendance: ${isYearly ? "Yearly" : "Monthly"}`} />
       </div>
-      <FormControl fullWidth>
+      <div className="college-card-container">
+        {colleges.map((college: CollegeInfo) => <CollegeInfoCard college={college} isYearly={isYearly} />)}
+      </div>
+
+      {/* <FormControl fullWidth>
         <InputLabel id="college-select-label">Select a College</InputLabel>
         <Select labelId="college-select-label" id="college-select" onChange={handleCollegeChange} value={college.code} label={college.name}>
           {colleges.map((c: CollegeInfo) => <MenuItem value={c.code}>{c.name}</MenuItem>)}
         </Select>
-      </FormControl>
-
-      <div>
-        <NumberFlow value={accumulateCOA(college)} format={{ style: 'currency', currency: 'USD' }}
-        />
-      </div>
-      <div>
-        {distance} Meters
-      </div>
+      </FormControl> */}
     </>
   )
 }
