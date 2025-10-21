@@ -13,7 +13,7 @@ const blankRoute: Route = {
 }
 
 function getRoute(lon: number, lat: number): Route {
-  const OSRMURL = `http://router.project-osrm.org/route/v1/driving/26.2913,440.2411;${lon},${lat};`
+  const OSRMURL = `http://router.project-osrm.org/route/v1/driving/26.291300,440.241100;${lon},${lat};`
   let routeData = blankRoute
 
 
@@ -31,4 +31,8 @@ export const getRouteFromArray = (arr: [number, number]): Route => getRoute(arr[
 
 export const accumulateCOA = (c: CollegeInfo): number => Object.values(c.costOfAttendance).reduce((total, current) => total + current) - c.scholarshipAmount
 
-export const getMonthlyCOA = (c: CollegeInfo): number => (accumulateCOA(c) * (9 / 12)) / 9
+/** 
+ * 
+ * @param {Co}
+ */
+export const getMonthlyCOA = (c: CollegeInfo, m: number = 9): number => (accumulateCOA(c) * (m / 12)) / m
