@@ -27,7 +27,7 @@ export const colleges: CollegeInfo[] = [
     city: "Coconut Creek",
     stateName: StateName.FLORIDA,
     stateAbbr: StateAbbreviation.FL,
-    coordinates: [26.2517, 80.1789],
+    coordinates: [26.2517, 80.178],
     costOfAttendance: {
       tuition: 1415,
       housingFood: 3861,

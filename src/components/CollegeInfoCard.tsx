@@ -21,12 +21,14 @@ function CollegeInfoCard({ college, isYearly }: CollegeInfoCardProps) {
             animated={false}
             value={isYearly ? accumulateCOA(college) : getMonthlyCOA(college)}
             format={{ style: 'currency', currency: 'USD' }}
-          /><CardMedia
+          />
+          <CardMedia
             component="img"
             sx={{ width: 75, position: "relative", top: "-75%", left: "75%" }}
             image={college.icon}
             alt={college.name}
-          /></Typography>
+          />
+          </Typography>
         <Typography variant="h5" sx={{ textAlign: "end" }}>{college.stateAbbr}</Typography>
       </CardContent>
     </Card>
