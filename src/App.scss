@@ -1,7 +1,20 @@
 .college-card-container {
-  max-height: 40vh
+  overflow-y: scroll;
+  max-height: 80vh;
+  margin: 20px 10px;
+
+  > div {
+    user-select: none;
+    cursor: pointer;
+
+  &:hover {
+    background-color:forestgreen
+    }
+  }
 }
 
 .college-icon {
-  width: 75px
+  width: 75px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px;
 }

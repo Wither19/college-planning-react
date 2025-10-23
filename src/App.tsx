@@ -10,16 +10,16 @@ import type { CollegeInfo } from './types'
 
 
 function App() {
-  // const [college, setCollege] = useState<CollegeInfo>(colleges[0])
+  const [college, setCollege] = useState<CollegeInfo>(colleges[0])
   // const [distance, setDistance] = useState(getRouteFromArray(college.coordinates).distance)
   const [isYearly, setCOAYearly] = useState(true)
 
-  // const handleCollegeChange = (e: SelectChangeEvent) => {
-  //   const selected = e.target.value
-  //   const rightCollege = colleges.filter((c) => c.code === selected)[0]
+  const handleCollegeChange = (e: React.MouseEvent<HTMLDivElement>) => {
+    const selected = e.currentTarget.id
+    const rightCollege = colleges.filter((c) => c.code === selected)[0]
 
-  //   setCollege(rightCollege)
-  // };
+    setCollege(rightCollege)
+  };
 
   const handleCOARate = () => {
     setCOAYearly((r) => !r)
@@ -32,12 +32,16 @@ function App() {
 
   return (
     <>
-      <div className="options-container">
+  <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+    <div><div className="options-container">
         <FormControlLabel onChange={handleCOARate} control={<Switch />} label={`Cost of Attendance: ${isYearly ? "Yearly" : "Monthly"}`} />
       </div>
       <div className="college-card-container">
-        {colleges.map((college: CollegeInfo) => <CollegeInfoCard college={college} isYearly={isYearly} />)}
-      </div>
+        {colleges.map((college: CollegeInfo) => <CollegeInfoCard id={college.code} college={college} isYearly={isYearly} onClick={handleCollegeChange} />)}
+      </div></div>
+      
+      <div>{college.name}</div>
+  </div>
 
       {/* <FormControl fullWidth>
         <InputLabel id="college-select-label">Select a College</InputLabel>

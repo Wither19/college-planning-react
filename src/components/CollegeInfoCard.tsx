@@ -7,13 +7,15 @@ import NumberFlow from "@number-flow/react"
 
 
 type CollegeInfoCardProps = {
-  college: CollegeInfo,
-  isYearly: boolean,
+  id: string
+  college: CollegeInfo
+  isYearly: boolean
+  onClick: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
-function CollegeInfoCard({ college, isYearly }: CollegeInfoCardProps) {
+function CollegeInfoCard({ id, college, isYearly, onClick }: CollegeInfoCardProps) {
   return (
-    <Card sx={{ minWidth: 400, my: 4 }}>
+    <Card onClick={onClick} id={id} sx={{ minWidth: 400, my: 4 }}>
       <CardContent>
         <Typography variant="h6">{college.name}</Typography>
         <Typography>Cost of Attendance: {isYearly}
