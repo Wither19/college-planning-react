@@ -26,12 +26,12 @@ function CollegeInfoCard({ id, college, isYearly, onClick }: CollegeInfoCardProp
           />
           <CardMedia
             component="img"
-            sx={{ width: 75, position: "relative", top: "-75%", left: "75%" }}
+            sx={{ width: 75, position: "relative", top: "-50%", left: "78%" }}
             image={college.icon}
             alt={college.name}
           />
           </Typography>
-        <Typography variant="h5" sx={{ textAlign: "end" }}>{college.stateAbbr}</Typography>
+        <Typography variant="h5" sx={{ textAlign: "end", marginRight: "30px" }}>{college.stateAbbr}</Typography>
       </CardContent>
     </Card>
   )
